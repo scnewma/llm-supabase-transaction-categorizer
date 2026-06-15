@@ -1,0 +1,3 @@
+[submodule "vendor/edge-function-mcp-sandbox"]
+	path = vendor/edge-function-mcp-sandbox
+	url = git@github.com:gregnr/edge-function-mcp-sandbox.git

@@ -1,0 +1,21 @@
+{
+  "name": "llm-supabase-transaction-categorizer",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "setup": "pnpm install && git submodule update --init --recursive && pnpm run build:vendor",
+    "build:vendor": "pnpm --dir vendor/edge-function-mcp-sandbox install && pnpm --dir vendor/edge-function-mcp-sandbox --filter @supabase/mcp-server-edge build",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "packageManager": "pnpm@10.33.0",
+  "devDependencies": {
+    "supabase": "^2.106.0"
+  },
+  "dependencies": {
+    "csv-parse": "^7.0.0"
+  }
+}
