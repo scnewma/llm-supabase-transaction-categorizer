@@ -1,0 +1,11 @@
+node_modules/
+
+# Local/private data
+.envrc
+local/
+*.csv
+transactions*.csv
+
+# Supabase local state
+supabase/.branches/
+supabase/.temp/
