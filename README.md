@@ -7,12 +7,7 @@ Runs an `mcp` server using [edge-function-mcp-sandbox](https://github.com/gregnr
 - `store_transaction_example` - Compute an embedding for the transaction and store in in the database.
 - `fetch_similar_transactions` - Search the database for similar transactions using the transaction details to do a vector similarity search on the embeddings, weighted with a custom "transaction amount similarity".
 
-The transaction data + simililar transactions are fed into a prompt that can run against any model. For my testing, I ran `gemma-4-e4b-it` in LM Studio.
-
-> [!NOTE]
-> The scripts in the repo are just calling the MCP server directly, not
-> having the LLM call it. This was mostly due to different models having
-> more/less capable tool calling. It was built as an MCP server so that could be changed easily in the future.
+The transaction data is fed into a prompt that runs against LM Studio's OpenAI-compatible API. During evaluation, the model is given the MCP tool schema, chooses the tool call, and the script executes that MCP call against the Supabase function. For my testing, I ran `gemma-4-e4b-it` in LM Studio.
 
 ## Results
 
@@ -47,6 +42,8 @@ Install dependencies and build the vendored MCP edge helper:
 ```sh
 pnpm run setup
 ```
+
+Run LM Studio with the OpenAI-compatible server enabled. By default, evaluation uses `http://localhost:1234/v1`; override with `LMSTUDIO_BASE_URL` or `--base-url`. Pass `--model` or set `LMSTUDIO_MODEL` to match the model loaded in LM Studio.
 
 ### Start Supabase
 
@@ -101,7 +98,6 @@ Common options:
 ```sh
 node scripts/evaluate_mcp.mjs \
   local/testdata/transactions-100.csv \
-  --base-url http://localhost:1234/v1 \
   --model gemma-4-e4b-it \
   --match-count 5
 ```
