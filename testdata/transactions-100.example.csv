@@ -1,0 +1,101 @@
+account,date,payee,amount,notes,category
+Credit Card,2025-01-03,Internal Transfer,-261.85,Buffer savings transfer,2 Month Buffer
+Savings,2025-01-03,Delta Air Lines,-646.70,,Travel
+Credit Card,2025-01-18,Midas Auto Service,-208.86,,Auto Maintenance
+Credit Card,2025-01-25,Lowe's,-346.95,,Home Improvement
+Checking,2025-01-26,Costco,-104.62,,Uncategorized
+Savings,2025-01-30,Nordstrom Rack,-27.83,,Clothing
+Savings,2025-01-30,Local Food Bank,-150.80,Donation,Gifts/Donations
+Credit Card,2025-02-05,Internal Transfer,-455.52,Buffer savings transfer,2 Month Buffer
+Savings,2025-02-21,iCloud Storage,-14.51,,Subscriptions
+Credit Card,2025-02-23,Old Navy,-167.01,,Clothing
+Checking,2025-02-23,Internal Transfer,-104.52,Buffer savings transfer,2 Month Buffer
+Checking,2025-02-24,Downtown Pharmacy,-283.24,,Medical
+Savings,2025-03-05,Local Food Bank,-24.11,Donation,Gifts/Donations
+Checking,2025-03-22,Riverside Family Clinic,-209.27,Copay,Medical
+Savings,2025-03-24,Lowe's,-182.74,,Home Improvement
+Credit Card,2025-03-31,Petco,-134.39,,Pets
+Credit Card,2025-04-07,Internal Transfer,-85.14,Buffer savings transfer,2 Month Buffer
+Savings,2025-04-08,Midas Auto Service,-505.32,,Auto Maintenance
+Credit Card,2025-04-11,Local Pizza Co,-11.89,,Restaurants
+Credit Card,2025-04-13,Barnes & Noble,-103.04,,Spending Money
+Credit Card,2025-04-22,Fiber Internet Co,-247.75,Internet service,Utilities
+Credit Card,2025-04-22,Little Learners Preschool,-320.63,Tuition,Kids/Childcare
+Credit Card,2025-04-22,Internal Transfer,-160.25,Transfer between own accounts,Uncategorized
+Savings,2025-04-23,Chevron,-59.60,,Fuel & Parking
+Savings,2025-04-26,Trader Joe's,-91.23,,Groceries
+Checking,2025-05-06,Meridian Property Mgmt,-2192.79,Monthly rent,Mortgage/Rent
+Credit Card,2025-05-18,Red Cross,-129.84,Donation,Gifts/Donations
+Savings,2025-05-27,Meridian Property Mgmt,-2092.05,Monthly rent,Mortgage/Rent
+Checking,2025-05-31,Little Learners Preschool,-154.54,Tuition,Kids/Childcare
+Credit Card,2025-06-01,Ace Hardware,-167.18,,Home Improvement
+Checking,2025-06-04,Nordstrom Rack,-69.20,,Clothing
+Checking,2025-06-08,City Water & Power,-137.02,Monthly utility bill,Utilities
+Credit Card,2025-06-09,Michaels,-50.39,AplPay MICHAELS,Spending Money
+Checking,2025-06-12,Delta Air Lines,-342.86,,Travel
+Checking,2025-06-15,Local Pizza Co,-68.57,,Restaurants
+Savings,2025-06-17,Starbucks,-24.17,AplPay STARBUCKS,Restaurants
+Savings,2025-06-18,Internal Transfer,-193.15,Transfer between own accounts,Uncategorized
+Savings,2025-06-20,Riverside Animal Hospital,-103.87,Checkup,Pets
+Savings,2025-07-08,Lowe's,-73.37,,Home Improvement
+Checking,2025-08-05,Enterprise Rent-A-Car,-357.03,,Travel
+Savings,2025-08-06,Downtown Pharmacy,-144.41,,Medical
+Credit Card,2025-08-21,Summit Home Loans,-1638.66,Mortgage payment,Mortgage/Rent
+Savings,2025-08-25,Costco,-177.75,,Uncategorized
+Credit Card,2025-09-13,Riverside Animal Hospital,-97.22,Checkup,Pets
+Credit Card,2025-09-17,Internal Transfer,-252.74,Buffer savings transfer,2 Month Buffer
+Credit Card,2025-09-20,Circle K,-49.00,AplPay CIRCLE K,Fuel & Parking
+Checking,2025-09-30,Internal Transfer,-451.95,Buffer savings transfer,2 Month Buffer
+Savings,2025-10-14,Riverside Family Clinic,-338.54,Copay,Medical
+Savings,2025-10-17,Trader Joe's,-16.56,,Groceries
+Credit Card,2025-10-18,Old Navy,-169.80,,Clothing
+Savings,2025-10-30,Local Food Bank,-141.04,Donation,Gifts/Donations
+Checking,2025-10-31,Riverside Family Clinic,-244.74,Copay,Medical
+Savings,2025-11-08,Meridian Property Mgmt,-2191.42,Monthly rent,Mortgage/Rent
+Checking,2025-11-11,Shell,-21.92,,Fuel & Parking
+Credit Card,2025-11-19,Little Learners Preschool,-70.36,Tuition,Kids/Childcare
+Credit Card,2025-11-25,Chick fil A,-53.55,,Restaurants
+Credit Card,2025-11-29,Old Navy,-116.08,,Clothing
+Credit Card,2025-12-02,Petco,-146.28,,Pets
+Checking,2025-12-04,Old Navy,-164.40,,Clothing
+Checking,2025-12-10,Costco,-233.65,,Uncategorized
+Checking,2025-12-19,Statewide Insurance,-257.06,Auto + home bundle,Insurance
+Credit Card,2025-12-19,Metro Gas Co,-136.18,Monthly utility bill,Utilities
+Credit Card,2025-12-20,Enterprise Rent-A-Car,-106.31,,Travel
+Savings,2025-12-27,Safeway,-145.79,,Groceries
+Savings,2026-01-01,Ace Hardware,-117.27,,Home Improvement
+Checking,2026-01-02,Trader Joe's,-124.29,,Groceries
+Credit Card,2026-01-03,Internal Transfer,-121.26,Buffer savings transfer,2 Month Buffer
+Savings,2026-01-07,Statewide Insurance,-170.33,Auto + home bundle,Insurance
+Savings,2026-01-08,GuardHealth Insurance,-109.49,Premium payment,Insurance
+Savings,2026-01-13,Whole Foods Market,-167.88,AplPay WHOLE FOODS,Groceries
+Checking,2026-01-14,Petco,-69.70,,Pets
+Checking,2026-01-19,Kroger,-106.76,,Groceries
+Credit Card,2026-01-21,Internal Transfer,-52.09,Transfer between own accounts,Uncategorized
+Checking,2026-02-02,Spotify,-10.90,,Subscriptions
+Credit Card,2026-02-11,Starbucks,-12.09,AplPay STARBUCKS,Restaurants
+Credit Card,2026-02-15,Steam,-26.99,Game purchase,Fun Money/Entertainment
+Savings,2026-02-19,Barnes & Noble,-119.02,,Spending Money
+Checking,2026-02-26,Internal Transfer,-244.23,Buffer savings transfer,2 Month Buffer
+Savings,2026-03-04,Enterprise Rent-A-Car,-240.66,,Travel
+Credit Card,2026-03-17,Etsy,-41.74,Online order,Spending Money
+Credit Card,2026-03-24,Sunshine Daycare,-74.62,Weekly childcare,Kids/Childcare
+Savings,2026-03-31,Little Learners Preschool,-207.34,Tuition,Kids/Childcare
+Checking,2026-04-06,Acme Corp Payroll,1503.19,Direct deposit,Income/Paycheck
+Checking,2026-04-07,Little Learners Preschool,-363.95,Tuition,Kids/Childcare
+Savings,2026-04-10,Jiffy Lube,-431.59,Oil change,Auto Maintenance
+Credit Card,2026-04-14,Amazon,-281.25,Online order,Uncategorized
+Checking,2026-04-16,Red Cross,-98.73,Donation,Gifts/Donations
+Checking,2026-04-16,Little Learners Preschool,-198.65,Tuition,Kids/Childcare
+Credit Card,2026-04-17,Internal Transfer,-262.54,Buffer savings transfer,2 Month Buffer
+Credit Card,2026-04-23,Summit Home Loans,-2131.12,Mortgage payment,Mortgage/Rent
+Credit Card,2026-04-24,Riverside Animal Hospital,-70.22,Checkup,Pets
+Credit Card,2026-04-29,Netflix,-11.53,,Subscriptions
+Savings,2026-05-13,Steam,-123.64,Game purchase,Fun Money/Entertainment
+Savings,2026-05-23,Target,-37.09,,Spending Money
+Savings,2026-05-25,Old Navy,-66.48,,Clothing
+Credit Card,2026-05-29,Safeway,-35.07,,Groceries
+Checking,2026-05-30,Circle K,-12.64,AplPay CIRCLE K,Fuel & Parking
+Credit Card,2026-06-03,Nordstrom Rack,-47.45,,Clothing
+Credit Card,2026-06-21,Chipotle,-48.34,,Restaurants
+Savings,2026-06-26,Bright Smile Dental,-357.73,Cleaning,Medical

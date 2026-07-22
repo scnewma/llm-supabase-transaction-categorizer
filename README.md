@@ -73,7 +73,7 @@ pnpm run create-user
 
 ### Try it with the example data
 
-`testdata/transactions-1000.example.csv` and `prompts/system_prompt.example.md` are
+`testdata/transactions-100.example.csv` and `prompts/system_prompt.example.md` are
 committed to the repo so you can run the full pipeline without any real
 transaction history.
 
@@ -83,12 +83,12 @@ transaction history.
 > `scripts/generate_test_data.mjs`; regenerate it (or make a bigger one) with:
 >
 > ```sh
-> pnpm run generate-test-data -- testdata/transactions-1000.example.csv
+> pnpm run generate-test-data -- testdata/transactions-100.example.csv --count 100
 > ```
 
 ```sh
-node scripts/load_transactions_mcp.mjs testdata/transactions-1000.example.csv --clear
-node scripts/evaluate_mcp.mjs testdata/transactions-1000.example.csv --prompt prompts/system_prompt.example.md
+node scripts/load_transactions_mcp.mjs testdata/transactions-100.example.csv --clear
+node scripts/evaluate_mcp.mjs testdata/transactions-100.example.csv --prompt prompts/system_prompt.example.md
 ```
 
 ### Load Transactions
