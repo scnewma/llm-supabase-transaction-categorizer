@@ -105,8 +105,18 @@ function shouldSkipEvaluation(row) {
   return payee.includes("walmart") || payee.includes("amazon");
 }
 
+// HACK: LM Studio's forced tool-calling (tool_choice: "required") hangs/500s for
+// google/gemma-4-e4b when the real prompt is combined with a blank (empty or
+// whitespace-only) `notes` value — confirmed by swapping only the notes value
+// between "" and "none" with everything else byte-identical. Using "none"
+// avoids it. Revisit if LM Studio fixes this / a different model is used.
+function sanitizeNotes(notes) {
+  return notes?.trim() ? notes : "none";
+}
+
 function transactionText(row, matchCount) {
-  return `Call ${MCP_TOOL_NAME} with payee ${JSON.stringify(row.payee)}, notes ${JSON.stringify(row.notes)}, amount ${Number(row.amount)}, match_count ${matchCount}. Then ignore exact duplicates from the tool result and categorize this transaction: Account: ${row.account}; Payee: ${row.payee}; Amount: ${row.amount}; Date: ${row.date}; Notes: ${row.notes}. Return only the final category name. If the best category is Uncategorized, return an empty string.`;
+  const notes = sanitizeNotes(row.notes);
+  return `Call ${MCP_TOOL_NAME} with payee ${JSON.stringify(row.payee)}, notes ${JSON.stringify(notes)}, amount ${Number(row.amount)}, match_count ${matchCount}. Then ignore exact duplicates from the tool result and categorize this transaction: Account: ${row.account}; Payee: ${row.payee}; Amount: ${row.amount}; Date: ${row.date}; Notes: ${notes}. Return only the final category name. If the best category is Uncategorized, return an empty string.`;
 }
 
 function evaluatorPrompt(systemPrompt) {
@@ -162,6 +172,10 @@ async function complete(args, config, systemPrompt, row) {
 
   const toolCall = toolCalls[0];
   const toolArgs = JSON.parse(toolCall.function.arguments || "{}");
+  // The prompt feeds the LLM "none" for blank notes to dodge the forced
+  // tool-call grammar hang, but the MCP similarity search must run on the real
+  // notes value, so restore it before calling the tool.
+  toolArgs.notes = row.notes?.trim() ? row.notes : "";
   const result = await mcpRequest(config, 2, "tools/call", {
     name: MCP_SERVER_TOOL_NAME,
     arguments: toolArgs,
