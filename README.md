@@ -52,6 +52,25 @@ pnpm exec supabase start
 pnpm exec supabase functions serve
 ```
 
+### Authentication
+
+This app runs as a single Supabase Auth user; the anonymous role has no access.
+The loader and evaluator sign in with a user's email/password and send that
+user's JWT to the MCP server and REST API.
+
+Set the credentials (e.g. in `.envrc`, which is gitignored):
+
+```sh
+export SUPABASE_USER_EMAIL="me@example.com"
+export SUPABASE_USER_PASSWORD="a-strong-password"
+```
+
+Create the user once (uses the local admin/secret key; idempotent):
+
+```sh
+pnpm run create-user
+```
+
 ### Load Transactions
 
 Put private transaction CSVs under `local/testdata/`. Files in `local/` are ignored by git.

@@ -10,7 +10,7 @@ const session = new Supabase.ai.Session("gte-small");
 export default {
   fetch: withMcp(
     withSupabase(
-      { auth: ["publishable", "secret"] },
+      { auth: "user" },
       async (req, { supabase }) => {
         const server = new McpServer({
           name: "transaction-categorizer",

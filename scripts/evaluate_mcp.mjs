@@ -1,8 +1,13 @@
 #!/usr/bin/env node
-import { execFileSync } from "node:child_process";
 import fs from "node:fs/promises";
 import process from "node:process";
 import { parse } from "csv-parse/sync";
+import {
+  authHeaders,
+  resolveConfig,
+  signIn,
+  userCredentials,
+} from "./auth.mjs";
 
 const DEFAULT_INPUT = "local/testdata/transactions-100.csv";
 const DEFAULT_BASE_URL = "http://localhost:1234/v1";
@@ -46,6 +51,10 @@ Options:
 
 Load examples first with scripts/load_transactions_mcp.mjs.
 
+Required environment variables:
+  SUPABASE_USER_EMAIL
+  SUPABASE_USER_PASSWORD
+
 Environment overrides:
   LMSTUDIO_BASE_URL
   LMSTUDIO_MODEL
@@ -53,23 +62,6 @@ Environment overrides:
   SUPABASE_URL
   PUBLISHABLE_KEY
 `);
-}
-
-function supabaseStatus() {
-  return JSON.parse(execFileSync("pnpm", ["exec", "supabase", "status", "-o", "json"], { encoding: "utf8" }));
-}
-
-function localConfig() {
-  let status;
-  const supabaseUrl = process.env.SUPABASE_URL;
-  const key = process.env.PUBLISHABLE_KEY;
-  if (!supabaseUrl || !key) status = supabaseStatus();
-
-  const baseUrl = (supabaseUrl ?? status.API_URL).replace(/\/$/, "");
-  return {
-    mcpUrl: `${baseUrl}/functions/v1/mcp`,
-    key: key ?? status.PUBLISHABLE_KEY,
-  };
 }
 
 async function loadSystemPrompt(promptPath) {
@@ -82,12 +74,11 @@ function parseMcpBody(text) {
   return JSON.parse(dataLines.length ? dataLines.join("\n") : text);
 }
 
-async function mcpRequest({ mcpUrl, key }, id, method, params) {
+async function mcpRequest({ mcpUrl, config, accessToken }, id, method, params) {
   const response = await fetch(mcpUrl, {
     method: "POST",
     headers: {
-      Authorization: `Bearer ${key}`,
-      apikey: key,
+      ...authHeaders(config, accessToken),
       "Content-Type": "application/json",
       Accept: "application/json, text/event-stream",
     },
@@ -192,7 +183,9 @@ async function main() {
     return;
   }
 
-  const config = localConfig();
+  const baseConfig = resolveConfig();
+  const accessToken = await signIn(baseConfig, userCredentials());
+  const config = { mcpUrl: baseConfig.mcpUrl, config: baseConfig, accessToken };
   await mcpRequest(config, 1, "initialize", {
     protocolVersion: "2025-03-26",
     capabilities: {},

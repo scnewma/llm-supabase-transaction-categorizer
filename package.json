@@ -6,6 +6,7 @@
   "scripts": {
     "setup": "pnpm install && git submodule update --init --recursive && pnpm run build:vendor",
     "build:vendor": "pnpm --dir vendor/edge-function-mcp-sandbox install && pnpm --dir vendor/edge-function-mcp-sandbox --filter @supabase/mcp-server-edge build",
+    "create-user": "node scripts/create_user.mjs",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
