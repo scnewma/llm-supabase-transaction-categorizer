@@ -5,6 +5,7 @@ node_modules/
 local/
 *.csv
 transactions*.csv
+!testdata/*.example.csv
 
 # Supabase local state
 supabase/.branches/

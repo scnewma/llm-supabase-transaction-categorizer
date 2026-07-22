@@ -71,6 +71,26 @@ Create the user once (uses the local admin/secret key; idempotent):
 pnpm run create-user
 ```
 
+### Try it with the example data
+
+`testdata/transactions-1000.example.csv` and `prompts/system_prompt.example.md` are
+committed to the repo so you can run the full pipeline without any real
+transaction history.
+
+> **Note:** These example files are AI-generated placeholder data for
+> demonstration purposes only — they are not real transactions and not a real
+> budget category setup. The CSV is produced deterministically by
+> `scripts/generate_test_data.mjs`; regenerate it (or make a bigger one) with:
+>
+> ```sh
+> pnpm run generate-test-data -- testdata/transactions-1000.example.csv
+> ```
+
+```sh
+node scripts/load_transactions_mcp.mjs testdata/transactions-1000.example.csv --clear
+node scripts/evaluate_mcp.mjs testdata/transactions-1000.example.csv --prompt prompts/system_prompt.example.md
+```
+
 ### Load Transactions
 
 Put private transaction CSVs under `local/testdata/`. Files in `local/` are ignored by git.
